@@ -33,19 +33,19 @@ namespace JWTWebAPI_Dion.Controllers
         [HttpGet(nameof(GetById))]
         public async Task<UserApplication> GetById(int id)
         {
-            var result = await Task.FromResult(_dapper.Get<UserApplication>($"Select * from TB_M_UserApplication where Id = {id}", null, commandType: CommandType.Text));
+            var result = await Task.FromResult(_dapper.Get<UserApplication>($"Select * from TB_T_UserApplication where Id = {id}", null, commandType: CommandType.Text));
             return result;
         }
         [HttpGet(nameof(GetAllData))]
         public List<UserApplication> GetAllData()
         {
-            var result = (_dapper.GetAll<UserApplication>($"Select * from TB_M_UserApplication", null, commandType: CommandType.Text));
+            var result = (_dapper.GetAll<UserApplication>($"Select * from TB_T_UserApplication", null, commandType: CommandType.Text));
             return result;
         }
         [HttpDelete(nameof(Delete))]
         public async Task<int> Delete(int id)
         {
-            var result = await Task.FromResult(_dapper.Execute($"DELETE FROM TB_M_UserApplication WHERE Id = {id}", null, commandType: CommandType.Text));
+            var result = await Task.FromResult(_dapper.Execute($"DELETE FROM TB_T_UserApplication WHERE Id = {id}", null, commandType: CommandType.Text));
             return result;
         }
         [HttpPatch(nameof(Update))]
