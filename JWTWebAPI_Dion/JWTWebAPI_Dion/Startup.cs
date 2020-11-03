@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using JWTWebAPI_Dion.Context;
 using JWTWebAPI_Dion.DapperRepository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.Language.CodeGeneration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace JWTWebAPI_Dion
 {
@@ -31,6 +36,27 @@ namespace JWTWebAPI_Dion
             services.AddDbContext<MyContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IDapper, Dapperr>();
+            //var symmetricSecurity = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MyContext>().AddDefaultTokenProviders();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options=> {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    //ValidIssuer = "https://localhost:44382/",
+                    //ValidAudience = "https://localhost:44382/",
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    //IssuerSigningKey = symmetricSecurity;
+                };
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +70,7 @@ namespace JWTWebAPI_Dion
             {
                 app.UseHsts();
             }
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
             app.UseMvc();

@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JWTWebAPI_Dion.Controllers
 {
+    //[Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        //[AllowAnonymous]
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -18,6 +23,7 @@ namespace JWTWebAPI_Dion.Controllers
         }
 
         // GET api/values/5
+        //[AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {

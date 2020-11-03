@@ -26,11 +26,10 @@ namespace JWTWebAPI_Dion.Controllers
             var dbparams = new DynamicParameters();
             dbparams.Add("Email", data.Email, DbType.String);
             dbparams.Add("Password", data.Password, DbType.String);
-            dbparams.Add("IsUpdatePassword", data.IsUpdatePassword, DbType.String);
+            //dbparams.Add("IsUpdatePassword", data.IsUpdatePassword, DbType.String);
             var result = await Task.FromResult(_dapper.Insert<int>("[dbo].[SP_InsertUser]", dbparams, commandType: CommandType.StoredProcedure));
             return result;
         }
-
         [HttpGet(nameof(GetById))]
         public async Task<User> GetById(int id)
         {
