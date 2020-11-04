@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JWTWebAPI_Dion.Context;
 using JWTWebAPI_Dion.DapperRepository;
+using JWTWebAPI_Dion.Repositories.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -57,6 +58,10 @@ namespace JWTWebAPI_Dion
                 };
 
             });
+
+            services.AddScoped<ApplicationRepository>();
+            services.AddScoped<RoleRepository>();
+            services.AddScoped<DepartmentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

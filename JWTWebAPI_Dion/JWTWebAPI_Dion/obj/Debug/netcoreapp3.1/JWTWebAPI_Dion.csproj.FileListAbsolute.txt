@@ -1,0 +1,5 @@
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp3.1\JWTWebAPI_Dion.csprojAssemblyReference.cache
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp3.1\JWTWebAPI_Dion.AssemblyInfoInputs.cache
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp3.1\JWTWebAPI_Dion.AssemblyInfo.cs
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp3.1\JWTWebAPI_Dion.csproj.CoreCompileInputs.cache
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp3.1\JWTWebAPI_Dion.MvcApplicationPartsAssemblyInfo.cache
