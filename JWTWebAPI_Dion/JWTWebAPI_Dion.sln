@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTWebAPI_Dion", "JWTWebAPI_Dion\JWTWebAPI_Dion.csproj", "{23C15354-86E3-4387-BBB2-9389A70275D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNetWebClient_Dion", "ASPNetWebClient_Dion\ASPNetWebClient_Dion.csproj", "{3B37B147-3E8C-4E37-AA84-C85A93BC3993}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNetWebClient_Dion", "ASPNetWebClient_Dion\ASPNetWebClient_Dion.csproj", "{3B37B147-3E8C-4E37-AA84-C85A93BC3993}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

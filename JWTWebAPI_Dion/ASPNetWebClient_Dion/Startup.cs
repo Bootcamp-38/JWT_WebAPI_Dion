@@ -33,6 +33,12 @@ namespace ASPNetWebClient_Dion
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
         }
@@ -43,16 +49,22 @@ namespace ASPNetWebClient_Dion
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
+                //app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+            app.UseSession();
+
+            app.UseHttpsRedirection();
+            
             app.UseCookiePolicy();
+            
 
             app.UseMvc(routes =>
             {

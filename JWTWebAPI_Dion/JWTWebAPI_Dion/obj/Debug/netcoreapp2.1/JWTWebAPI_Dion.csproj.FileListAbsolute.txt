@@ -15,3 +15,4 @@ D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.dll
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.pdb
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.genruntimeconfig.cache
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.csprojAssemblyReference.cache

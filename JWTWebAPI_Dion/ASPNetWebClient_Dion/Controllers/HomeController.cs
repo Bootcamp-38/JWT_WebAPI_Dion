@@ -10,13 +10,18 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace ASPNetWebClient_Dion.Controllers
 {
     public class HomeController : Controller
     {
+        const string SessionEmail = "_Email";
+        const string SessionPass = "_Age";
         public IActionResult Index()
         {
+            HttpContext.Session.SetString(SessionEmail, "Jarvik");
+            HttpContext.Session.SetInt32(SessionPass, 345);
             return View();
         }
 
@@ -44,7 +49,9 @@ namespace ASPNetWebClient_Dion.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewBag.Email = HttpContext.Session.GetString(SessionEmail);
+            ViewBag.Pass = HttpContext.Session.GetInt32(SessionPass);
+            ViewData["Message"] = "ASP.Net Core!!!";
 
             return View();
         }
