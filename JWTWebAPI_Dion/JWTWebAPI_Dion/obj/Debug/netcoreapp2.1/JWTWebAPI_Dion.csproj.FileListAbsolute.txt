@@ -6,6 +6,7 @@ D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\bin\Debug\netcoreapp2.1\
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\bin\Debug\netcoreapp2.1\JWTWebAPI_Dion.runtimeconfig.dev.json
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\bin\Debug\netcoreapp2.1\JWTWebAPI_Dion.dll
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\bin\Debug\netcoreapp2.1\JWTWebAPI_Dion.pdb
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.csprojAssemblyReference.cache
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.AssemblyInfoInputs.cache
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.AssemblyInfo.cs
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\JWTWebAPI_Dion\obj\Debug\netcoreapp2.1\JWTWebAPI_Dion.csproj.CoreCompileInputs.cache

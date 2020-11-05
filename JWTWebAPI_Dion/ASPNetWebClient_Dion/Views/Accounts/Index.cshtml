@@ -4,18 +4,21 @@
     Layout = "~/Views/Layout/Layout.cshtml";
 }
 
-@*<div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100">
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+
+            <div class="grid_container">
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="~/Login_v1/images/img-01.png" alt="IMG">
                 </div>
+                <div>
                     <span class="login100-form-title">
                         Member Login
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="email" placeholder="Email" id="Email">
+                        <input class="input100" type="text" placeholder="Email" id="email">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -23,7 +26,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password" id="Password">
+                        <input class="input100" type="password" placeholder="Password" id="password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
@@ -31,7 +34,7 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn" id="login" onclick="Login();">
+                        <button class="login100-form-btn" onclick="Login();">
                             Login
                         </button>
                     </div>
@@ -51,38 +54,34 @@
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
+                </div>
             </div>
+            
+
+            
         </div>
-    </div>*@
-
-<input id="Email" class="input100" type="text" placeholder="Email">
-<span class="focus-input100-1"></span>
-
-<input id="Password" type="password" placeholder="Password">
-<span class="focus-input100-1"></span>
-
-<button id="buttonLogin" onclick="Login()">Sign in</button>
+    </div>
+</div>
 
 @section script{
     <!--===============================================================================================-->
-    <!--<script src="~/Login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>-->
+    <script src="~/Login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
-    <!--<script src="~/Login_v1/vendor/bootstrap/js/popper.js"></script>
-    <script src="~/Login_v1/vendor/bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="~/Login_v1/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Login_v1/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
-    <!--<script src="~/Login_v1/vendor/select2/select2.min.js"></script>-->
+    <script src="~/Login_v1/vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->
-    <!--<script src="~/Login_v1/vendor/tilt/tilt.jquery.min.js"></script>
+    <script src="~/Login_v1/vendor/tilt/tilt.jquery.min.js"></script>
     <script>
         $('.js-tilt').tilt({
             scale: 1.1
         })
-    </script>-->
-    <!--SweetAlert-->
-    <!--<script src="~/Script/sweetalert2@10..js"></script>-->
+    </script>
     <!--===============================================================================================-->
-    <!--<script src="~/Login_v1/js/main.js"></script>-->
-    <!-- Login Function -->
-    <script src="~/Script/Login.js"></script>
+    <script src="~/Login_v1/js/main.js"></script>
+    <!-- Login script -->
+    @*<script src="~/Script/Login.js"></script>*@
+    <script src="~/Script/AccountLogin.js"></script>
 }
 

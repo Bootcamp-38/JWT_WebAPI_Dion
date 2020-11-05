@@ -61,7 +61,7 @@ using ASPNetWebClient_Dion.Models;
             WriteLiteral("\r\n<input id=\"email\" class=\"input100\" type=\"text\" placeholder=\"Email\">\r\n\r\n<input id=\"password\" type=\"password\" placeholder=\"Password\">\r\n\r\n<button id=\"buttonLogin\" onclick=\"Login();\">Sign in</button>\r\n\r\n");
             EndContext();
             BeginContext(246, 41, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e65a331b08b14a75a8862602e5f2c402", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "040a412c7e174794bb1a215891438df5", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -79,7 +79,7 @@ using ASPNetWebClient_Dion.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(291, 51, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b14b8cc2fe6742e49ed7b0e780986d05", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e956334560a49ba9a76740f1fbdc39d", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

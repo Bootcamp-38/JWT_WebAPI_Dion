@@ -1,0 +1,9 @@
+﻿.grid_container{
+    display:flex;
+    align-content:center;
+    vertical-align:central;
+}
+
+.alignment_container{
+    margin-right:10rem;
+}
