@@ -11,6 +11,7 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Text;
 using Microsoft.AspNetCore.Http;
+using JWTWebAPI_Dion.ViewModels;
 
 namespace ASPNetWebClient_Dion.Controllers
 {
@@ -26,7 +27,7 @@ namespace ASPNetWebClient_Dion.Controllers
         }
 
         [HttpPost]
-        public ActionResult Get(User user)
+        public ActionResult Get(UserRoleVM user)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -35,7 +36,7 @@ namespace ASPNetWebClient_Dion.Controllers
                 client.DefaultRequestHeaders.Accept.Add(contentType);
                 string data = JsonConvert.SerializeObject(user);
                 var contentData = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = client.PostAsync("/API/Accounts/Get", contentData).Result;
+                var response = client.PostAsync("/API/Accounts/Login", contentData).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     return Json(response.Content.ReadAsStringAsync().Result.ToString());

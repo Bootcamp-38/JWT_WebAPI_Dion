@@ -15,6 +15,7 @@ D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\bin\Debug\netcorea
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.csprojAssemblyReference.cache
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.AssemblyInfoInputs.cache
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.AssemblyInfo.cs
+D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.csproj.CoreCompileInputs.cache
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.RazorAssemblyInfo.cache
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.RazorAssemblyInfo.cs
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.TagHelpers.input.cache
@@ -77,4 +78,3 @@ D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcorea
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.dll
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.pdb
 D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.genruntimeconfig.cache
-D:\Github\JWT_WebAPI_Dion\JWTWebAPI_Dion\ASPNetWebClient_Dion\obj\Debug\netcoreapp2.1\ASPNetWebClient_Dion.csproj.CoreCompileInputs.cache

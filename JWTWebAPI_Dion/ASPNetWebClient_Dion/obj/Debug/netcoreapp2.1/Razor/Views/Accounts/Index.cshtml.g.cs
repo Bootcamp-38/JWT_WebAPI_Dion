@@ -98,7 +98,7 @@ using ASPNetWebClient_Dion.Models;
                 WriteLiteral("=====================================================================================-->\r\n    <!--<script src=\"~/Login_v1/js/main.js\"></script>-->\r\n    <!-- Login Function -->\r\n    ");
                 EndContext();
                 BeginContext(3875, 41, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff354f8a06434059824358d35e2b8451", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "174345dd172a4f67912bec7be45edc5a", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

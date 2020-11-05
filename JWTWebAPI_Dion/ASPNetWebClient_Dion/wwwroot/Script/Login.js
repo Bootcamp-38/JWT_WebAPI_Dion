@@ -1,12 +1,12 @@
 ﻿function Login() {
-    var User = new Object();
-    User.Email = $('#email').val();
-    User.Password = $('#password').val();
+    var UserRoleVM = new Object();
+    UserRoleVM.UserEmail = $('#email').val();
+    UserRoleVM.UserPassword = $('#password').val();
     debugger;
     $.ajax({
         type: "Post",
         url: '/Home/Get/',
-        data: User
+        data: UserRoleVM
     }).then((result) => {
         debugger;
         console.log(result);
