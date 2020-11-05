@@ -24,34 +24,35 @@ namespace JWTWebAPI_Dion.Controllers
     public class AccountsController : ControllerBase
     {
         private readonly IDapper _dapper;
-        private readonly IConfiguration _configuration;
+        public IConfiguration _configuration;
         public AccountsController(IConfiguration config, IDapper dapper)
         {
             _configuration = config;
             _dapper = dapper;
         }
 
-        //[AllowAnonymous]
-        [HttpGet(nameof(Login))]
-        public async Task<string> Login(User data)
+        [HttpPost(nameof(Get))]
+        public async Task<string> Get(User user)
         {
             var dbparams = new DynamicParameters();
-            dbparams.Add("Email", data.Email, DbType.String);
-            dbparams.Add("Password", data.Password, DbType.String);
-            var result = await Task.FromResult(_dapper.Get<User>("[dbo].[SP_LoginUser]", dbparams, commandType: CommandType.StoredProcedure));
+            dbparams.Add("Email", user.Email, DbType.String);
+            dbparams.Add("Password", user.Password, DbType.String);
+            var result = await Task.FromResult(_dapper.Get<User>("[dbo].[SP_LoginUser]", 
+                dbparams, commandType: CommandType.StoredProcedure));
 
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                new Claim("Email", result.Email),
-                new Claim("Password", result.Password)
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                    new Claim("Email", result.Email),
+                    new Claim("Password", result.Password)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(_configuration["Jwt:Issuer"], _configuration["Jwt:Audience"], claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
             return new JwtSecurityTokenHandler().WriteToken(token);
+            //return result;
         }
 
         //[AllowAnonymous]

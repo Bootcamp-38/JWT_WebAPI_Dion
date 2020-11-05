@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace JWTWebAPI_Dion.Controllers
 {
     //[Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
