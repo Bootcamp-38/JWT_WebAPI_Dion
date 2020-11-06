@@ -1,20 +1,10 @@
 ﻿@{
     ViewData["Title"] = "About";
 }
-@{ ViewBag.Title = "Session";
-    var email = ViewBag.Email;
-    var password = ViewBag.Pass;}
+@{ ViewBag.Title = "Role: ";
+    var Role = ViewBag.RoleName; }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 <p>Use this area to provide additional information.</p>
-<table>
-    <tr>
-        <th>Email</th>
-        <th>Password</th>
-    </tr>
-    <tr>
-        <td>@email</td>
-        <td>@password</td>
-    </tr>
-</table>
+<p>Role: @Role</p>

@@ -12,6 +12,10 @@ using Newtonsoft.Json;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 using JWTWebAPI_Dion.ViewModels;
+using System.IdentityModel.Tokens.Jwt;
+using ASPNetWebClient_Dion.Helper;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASPNetWebClient_Dion.Controllers
 {
@@ -19,6 +23,7 @@ namespace ASPNetWebClient_Dion.Controllers
     {
         const string SessionEmail = "_Email";
         const string SessionPass = "_Age";
+
         public IActionResult Index()
         {
             HttpContext.Session.SetString(SessionEmail, "Jarvik");
@@ -31,6 +36,7 @@ namespace ASPNetWebClient_Dion.Controllers
         {
             using (HttpClient client = new HttpClient())
             {
+                
                 client.BaseAddress = new Uri("https://localhost:44382");
                 MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
                 client.DefaultRequestHeaders.Accept.Add(contentType);
@@ -39,7 +45,14 @@ namespace ASPNetWebClient_Dion.Controllers
                 var response = client.PostAsync("/API/Accounts/Login", contentData).Result;
                 if (response.IsSuccessStatusCode)
                 {
+                    char[] trimChars = { '/', '"'};
+
+                    var jwt = response.Content.ReadAsStringAsync().Result.ToString();
+                    var handler = new JwtSecurityTokenHandler().ReadJwtToken(jwt.Trim(trimChars)).Claims.FirstOrDefault(x=>x.Type.Equals("RoleName")).Value;
+
+                    //return Json(new { result = "Redirect", url = Url.Action("Index", "Accounts"), data =jwt.ToString()});
                     return Json(response.Content.ReadAsStringAsync().Result.ToString());
+
                 }
                 else
                 {
@@ -48,10 +61,28 @@ namespace ASPNetWebClient_Dion.Controllers
             }
         }
 
+        protected string GetRole(string token)
+        {
+            string secret = "snfiAInfis1238NAIANDsndia";
+            var key = Encoding.UTF8.GetBytes(secret);
+            var handler = new JwtSecurityTokenHandler();
+            SecurityToken validateToken;
+            var validations = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidAudience = "InventoryServicePostmanClient",
+                ValidIssuer = "InventoryServiceAccessToken"
+            };
+            var claims = handler.ValidateToken(token, validations, out validateToken);
+            return claims.Identity.Name;
+        }
+
         public IActionResult About()
         {
-            ViewBag.Email = HttpContext.Session.GetString(SessionEmail);
-            ViewBag.Pass = HttpContext.Session.GetInt32(SessionPass);
+            ViewBag.RoleName = HttpContext.Session.GetString("Role: ");
             ViewData["Message"] = "ASP.Net Core!!!";
 
             return View();
